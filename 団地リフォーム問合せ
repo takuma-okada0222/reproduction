@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+  <meta charset="utf-8">
+  <title>団地リフォーム問合せ</title>
+  <link rel="icon" href="favicon.ico">
+  <meta name="description" content="団地リフォーム問合せ">
+  <link rel="stylesheet" href="css/css-takuma.css" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div class="header">
+      <div class="container">
+        <div class="header-title">
+
+          <h1>山田池住宅リフォーム問合せ</h1>
+        </div>
+
+      </div>
+    </div>
+    <div class="main">
+      <div class="contact-form">
+        <form method="POST" action="confirm.html">
+          <div class="form-item">お名前</div>
+          <input type="text" name="name">
+
+          <div class="form-item">メールアドレス</div>
+          <input type ="text" name="name">
+
+          <div class="form-item">お問い合わせの種類</div>
+          <?php 
+            $types = array('購入できる部屋を見てたい', 'リフォームの見積もりが欲しい', 'もう少し話を聞きたい');
+           ?>
+          <!-- この下にselectタグを書いていきましょう -->
+          <select name='category'>
+            <option value='未選択'>選択してください</option>
+            <?php
+            foreach ($types as $type){
+              echo "<option value='{$type}'>{$type}</option>";
+            }
+            ?>
+          </select>
+
+          <div class="form-item">ご質問内容</div>
+          <textarea name="body"></textarea>
+  
+          <input type="submit" value="送信">
+        </form>
+      </div>
+
+    </div>
+
+  </body>
